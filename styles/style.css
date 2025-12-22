@@ -9,8 +9,314 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+/*фон градиент*/
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  height: 100vh;
+  background-image: var(--page-gradient);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*Общие стили для кнопок*/
+.button {
+  position: relative;
+  border: 2px solid var(--text-color);
+  overflow: hidden;
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: 14px;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover {
+  color: var(--background-color);
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+  color: var(--background-color);
+  mix-blend-mode: difference;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
 
 .page {
+  font-family: var(--primary-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+}
+
+.inline__rubber {
+  border: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  inline-size: var(--inline-rubber);
+}
+
+/*шапка*/
+.header {
+  margin: 98px auto;
+  padding-block: clamp(7.625rem, 2.462vw + 7.048rem, 8.125rem);
+  font-family: var(--secondary-font);
+  text-align: center;
+}
+
+.header__title {
+  margin-bottom: 20px;
+  vertical-align: bottom;
+  font-weight: 400;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 4px 10px;
+  vertical-align: middle;
+  font-weight: var(--bold-weight-font);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+/*карточки*/
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-block-end: 100px;
+  font-family: var(--primary-font);
+}
+
+.card__item {
+  inline-size: var(--inline-rubber);
+}
+
+/*Стили картинок*/
+.card__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-block-start: 2px solid var(--text-color);
+  border-block-end: 2px solid var(--text-color);
+  overflow: hidden;
+  block-size: clamp(23.54rem, 100vw, 43.83rem);
+  inline-size: clamp(23.188rem, 100vw, 43.625rem);
+}
+
+.image {
+  object-fit: cover;
+  object-position: 95%;
+  block-size: clamp(23.54rem, 100vw, 43.83rem);
+  inline-size: clamp(23.188rem, 100vw, 43.625rem);
+}
+
+/*текст HTML*/
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: -1px -1px 0 var(--outline-color), 1px -1px 0 var(--outline-color),
+    -1px 1px 0 var(--outline-color), 1px 1px 0 var(--outline-color);
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px) {
+  .stroke-text {
+    color: var(--outline-color);
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--outline-color);
+  }
+}
+
+/*Текст карточек*/
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 25px;
+  font-family: var(--primary-font);
+  font-weight: var(--regular-weight-font);
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "slnt" 0;
+}
+
+/*Блок с иконкой и кнопкой*/
+.card__like {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  margin: 25px;
+}
+
+.card__icon {
+  width: 21px;
+  height: 21px;
+}
+
+.button__content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  /* КЛЮЧ */
+  mix-blend-mode: difference;
+}
+
+.card__like-button {
+  gap: 8px;
+  width: 130px;
+  padding: 10px 17px;
+}
+
+/*Кнопки "Сохранить в памяти"*/
+.save__button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 20px;
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  inline-size: clamp(19.125rem, 100vw + 0rem, 21.25rem);
+  block-size: 55px;
+}
+
+/*Фильтры карточек*/
+.filter-grayscale {
+  filter: grayscale(75%);
+}
+
+.filter-saturate {
+  filter: saturate(400%);
+}
+
+.filter-multiple {
+  filter: contrast(120%) hue-rotate(40deg) saturate(130%);
+}
+
+.filter-invert {
+  filter: invert(100%);
+}
+
+.filter-sepia {
+  filter: sepia(90%);
+}
+
+.filter-blur {
+  filter: blur(10px);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(100deg) blur(1px);
+}
+
+/*Модальное окно*/
+.modal__window {
+  border: 2px solid var(--text-color);
+  padding: 25px 30px;
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: var(--background-color);
+  max-inline-size: 355px;
+}
+
+.modal__window[open] {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
+}
+
+.modal__window::backdrop {
+  opacity: 0.75;
+  background: var(--text-color);
+}
+
+.modal__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal__icon {
+  flex-shrink: 0;
+  block-size: 39px;
+  inline-size: 39px;
+}
+
+.modal__button {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  text-transform: uppercase;
+  inline-size: 100%;
+  block-size: 38px;
+}
+
+/*Адаптив*/
+@media (width <=376px) {
+  .card__text {
+    inline-size: 321px;
+  }
+
+  .card__icon {
+    flex-shrink: 0;
+    block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .save__button {
+    flex-direction: column;
+    gap: 8px;
+    padding: 17px;
+    max-inline-size: 306px;
+    block-size: 84px;
+  }
 }
