@@ -203,14 +203,37 @@
   align-items: center;
   gap: 8px;
   color: white;
-  /* КЛЮЧ */
   mix-blend-mode: difference;
 }
 
 .card__like-button {
   gap: 8px;
   width: 130px;
-  padding: 10px 17px;
+  padding: 0px 17px;
+}
+
+.sparks {
+  opacity: 0;
+}
+ 
+.card__icon-button {
+  background-color: transparent;
+  padding: 0;
+  border: 2px solid transparent;
+  cursor: pointer;
+  width: 42px;
+  height: 38px;
+  appearance: none;
+  text-align: center;
+}
+
+.card__icon-button:focus {
+  outline: 0;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--animation-contour-color);
+  transition: border 0.3s ease;
 }
 
 /*Кнопки "Сохранить в памяти"*/
@@ -320,3 +343,4 @@
     block-size: 84px;
   }
 }
+
