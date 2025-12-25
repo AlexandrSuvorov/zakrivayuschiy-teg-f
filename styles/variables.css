@@ -2,7 +2,7 @@
   --primary-font: 'Inter-Variable', sans-serif;
   --secondary-font: 'PressStart2P', sans-serif;
   --bold-weight-font: 715;
-  --regular-weight-font: 410;
+  --regular-weight-font: 400;
 
   --page-gradient:
     repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
