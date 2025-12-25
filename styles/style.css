@@ -70,6 +70,7 @@
 
 .page {
   font-family: var(--primary-font);
+  font-variation-settings: "wght" var(--regular-weight-font);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
@@ -107,7 +108,7 @@
 .title {
   margin: 4px 10px;
   vertical-align: middle;
-  font-weight: var(--bold-weight-font);
+  font-variation-settings: "wght" var(--bold-weight-font);
   font-size: 18px;
   line-height: 1.2;
 }
