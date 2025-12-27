@@ -54,3 +54,6 @@ ol {
   white-space: nowrap;
 }
 
+figure {
+  margin: 0;
+}
