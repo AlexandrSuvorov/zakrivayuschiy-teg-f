@@ -217,10 +217,9 @@
   display: flex;
   align-items: center;
   gap: 9px;
+  margin: 0 auto 100px;
   padding: 20px;
   vertical-align: middle;
-  font-weight: 400;
-  font-size: 14px;
   line-height: 90%;
   inline-size: clamp(19.125rem, 100vw + 0rem, 21.25rem);
   block-size: 55px;
